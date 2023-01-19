@@ -51,4 +51,27 @@ Przy niskiej kohezji można zadać pytanie, czy w przyszłości kohezja może si
 Zrobić to można poprzez antywymagania, tzn. zadać pytanie czy 2 niepowiązane pola mogą być kiedyś ze sobą powiązane w jakieś wymaganie?
 Czy granica obiektów może zostać złamana?
 
-# Mniejsze powiązanie między obiektami
+# Struktura a obiekty
+Struktury są dobre dla stabilnych modeli. Przy modelach dynamicznych lepiej sprawdza się programowanie obiektowe.
+
+# SRP - single responsible principle
+Pojedynczy powód do zmiany = maksymalna kohezja
+
+# ValueObject
+Enkapsulacja wartości
+
+class PositiveValue {
+  private final int value;
+  
+  public PositiveValue(int value) {
+    if (left > right) {
+     throw new IllegalArgumentException("Value needs to be positive!");
+    }
+    this.value = value;
+  }
+  
+  // encapsulates internal model
+  public int getValueAsInteger() {
+    return value;
+  }
+}
